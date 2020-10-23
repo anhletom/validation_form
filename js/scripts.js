@@ -8,6 +8,10 @@
  * document.getElementByTagName('someTag') => $('someTag')
  * document.createElement('div').innerText = 'test'; => el =  $('<div>test</div>')
  * el.innerText => $(')
+ * 
+ * wrap code in this function to make sure the $ sign refers to jQuery:
+ * (function($){
+ * })(window.jQuery) 
  */
 
 
