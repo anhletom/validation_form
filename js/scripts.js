@@ -1,3 +1,16 @@
+/**
+ * Dom Manipulation
+ * 
+ * $ or jQuery or window.jQuery
+ * 
+ * document.getElementById('someID') => $('#someID')
+ * document.getElementByClassName('someClass') => $('.someClass')
+ * document.getElementByTagName('someTag') => $('someTag')
+ * document.createElement('div').innerText = 'test'; => el =  $('<div>test</div>')
+ * el.innerText => $(')
+ */
+
+
 var registeredUsers = ["Hoang", "Maija", "Anne", "Jarmo"]; // this array stores valid usernames until the next pageload
 
 if (registeredUsers.length > 5) {
@@ -21,7 +34,8 @@ function validateForm(e) {
       registeredUsers.shift();
     }
     //call render function
-    document.getElementById("registered-user").innerHTML = "";
+    //document.getElementById("registered-user").innerHTML = "";
+    $("#registered-user").empty();
     renderRegisteredUsers();
 
     document.registration.reset(); // reset form input fields
@@ -29,10 +43,12 @@ function validateForm(e) {
 }
 
 function renderRegisteredUsers() {
-  registeredUsers.forEach(function (registeredUser) {
-    var _newUser = document.createElement("li");
-    _newUser.innerHTML = registeredUser;
-    document.getElementById("registered-users").appendChild(_newUser);
+  /*registeredUsers.forEach(function (registeredUser)*/
+  $each(registeredUsers, function(registeredUser) {
+    $('<li>' + registerUser + '</li>').appendTo('#registered-users')
+    //var _newUser = document.createElement("li");
+    //_newUser.innerHTML = registeredUser;
+    //document.getElementById("registered-users").appendChild(_newUser);
   });
 }
 
@@ -112,11 +128,13 @@ function checkSpace(sample) {
  * @returns [Boolean] true when valid, false otherwise
  */
 function getUserName() {
-  if (typeof document.registration.username === "undefined") {
+  /*if (typeof document.registration.username === "undefined") {
     return "";
   } else {
     return document.registration.username.value;
-  }
+  }*/
+
+  return $('[name="username"]').val();
 }
 
 /**
@@ -129,11 +147,12 @@ function getUserName() {
 
 function getEmail() {
   // TODO
-  if (typeof document.registration.email === "undefined") {
+  /*if (typeof document.registration.email === "undefined") {
     return "";
   } else {
     return document.registration.email.value;
-  }
+  }*/
+  return $('[name="email"]').val();
 }
 
 /**
@@ -145,11 +164,12 @@ function getEmail() {
  */
 function getPassword() {
   // TODO
-  if (typeof document.registration.password === "undefined") {
+  /*if (typeof document.registration.password === "undefined") {
     return "";
   } else {
     return document.registration.password.value;
-  }
+  }*/
+  return $('[name="password"]').val();
 }
 
 /**
@@ -162,9 +182,10 @@ function getPassword() {
 
 function getConfirmPassword() {
   // TODO
-  if (typeof document.registration.password_confirm === "undefined") {
+  /*if (typeof document.registration.password_confirm === "undefined") {
     return "";
   } else {
     return document.registration.password_confirm.value;
-  }
+  }*/
+  return $('[name="password_confirm"]').val();
 }
