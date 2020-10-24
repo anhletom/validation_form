@@ -218,3 +218,14 @@ addSlide(imgUrl);
 addSlide(imgUrl);
 addSlide(imgUrl);
 addSlide(imgUrl);
+
+$(document).ready(function(){
+  $(".lazy").slick({
+    lazyLoad: 'ondemand', // ondemand progressive anticipated
+infinite: true,
+autoplay:true,
+autoplaySpeed:100,
+arrows:true,
+dots: true
+  });
+})	
