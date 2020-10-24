@@ -199,20 +199,22 @@ sliderEl.classList.add('lazy', 'slider');
 sliderEl.setAttribute('data-sizes','50vw');
 document.body.appendChild(sliderEl);
 
-var firstSlide = document.createElement('div');
+function addSlide(imgUrl){
+  var firstSlide = document.createElement('div');
 var firstSlideImage = document.createElement('img');
-firstSlideImage.setAttribute('data-lazy', 'http://placehold.it/350x300?text=1-350w');
-firstSlideImage.setAttribute('data-srcset', 'http://placehold.it/650x300?text=1-650w 650w, http://placehold.it/960x300?text=1-960w 960w');
+firstSlideImage.setAttribute('data-lazy', imgUrl);
+firstSlideImage.setAttribute('data-srcset', imgUrl);
 firstSlideImage.setAttribute('data-sizes','100vw');
 firstSlide.appendChild(firstSlideImage);
 
 sliderEl.appendChild(firstSlide);
+}
 
-var secondSlide = document.createElement('div');
-var secondSlideImage = document.createElement('img');
-secondSlideImage.setAttribute('data-lazy', 'http://placehold.it/350x300?text=1-350w');
-secondSlideImage.setAttribute('data-srcset', 'http://placehold.it/650x300?text=1-650w 650w, http://placehold.it/960x300?text=1-960w 960w');
-secondSlideImage.setAttribute('data-sizes','100vw');
-secondSlide.appendChild(secondSlideImage);
+var imgUrl = '//source.unsplash.com/600x400/?cloth,dresses'
 
-sliderEl.appendChild(secondSlide);
+addSlide(imgUrl);
+addSlide(imgUrl);
+addSlide(imgUrl);
+addSlide(imgUrl);
+addSlide(imgUrl);
+addSlide(imgUrl);
