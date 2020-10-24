@@ -199,7 +199,12 @@ sliderEl.classList.add('lazy', 'slider');
 sliderEl.setAttribute('data-sizes','50vw');
 document.body.appendChild(sliderEl);
 
+// function addSlide(imgUrl='http://placehold.it/650x300?text=1-650w') {...}
+
 function addSlide(imgUrl){
+  if(typeof(imgUrl) === 'undefined') {
+    imgUrl = 'http://placehold.it/650x300?text=1-650w'
+  }
   var Slide = document.createElement('div');
 var SlideImage = document.createElement('img');
 SlideImage.setAttribute('data-lazy', imgUrl);
@@ -214,9 +219,9 @@ var imgUrl = '//source.unsplash.com/600x400/?cloth,dresses'
 
 addSlide(imgUrl);
 addSlide(imgUrl);
+addSlide();
 addSlide(imgUrl);
-addSlide(imgUrl);
-addSlide(imgUrl);
+addSlide();
 addSlide(imgUrl);
 
 $(document).ready(function(){
