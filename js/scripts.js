@@ -200,14 +200,14 @@ sliderEl.setAttribute('data-sizes','50vw');
 document.body.appendChild(sliderEl);
 
 function addSlide(imgUrl){
-  var firstSlide = document.createElement('div');
-var firstSlideImage = document.createElement('img');
-firstSlideImage.setAttribute('data-lazy', imgUrl);
-firstSlideImage.setAttribute('data-srcset', imgUrl);
-firstSlideImage.setAttribute('data-sizes','100vw');
-firstSlide.appendChild(firstSlideImage);
+  var Slide = document.createElement('div');
+var SlideImage = document.createElement('img');
+SlideImage.setAttribute('data-lazy', imgUrl);
+SlideImage.setAttribute('data-srcset', imgUrl);
+SlideImage.setAttribute('data-sizes','100vw');
+Slide.appendChild(SlideImage);
 
-sliderEl.appendChild(firstSlide);
+sliderEl.appendChild(Slide);
 }
 
 var imgUrl = '//source.unsplash.com/600x400/?cloth,dresses'
